@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collision))]
+[RequireComponent(typeof(Collider))]
 public class Ammo : Item<AmmoData>
 {
     [SerializeField]
@@ -13,9 +13,7 @@ public class Ammo : Item<AmmoData>
     {
         if (rb == null)
         {
-            rb = this.transform.GetComponent<Rigidbody>();
-
-            if (rb == null)
+            if (!TryGetComponent(out rb))
             {
                 Debug.Log("Ammo Components not properly set or found.");
             }
@@ -33,7 +31,7 @@ public class Ammo : Item<AmmoData>
 
         if (this.rb)
         {
-            //Calculate damage based on
+            //Calculate damage based on velocity
         }
 
         return damage;
@@ -47,6 +45,29 @@ public class Ammo : Item<AmmoData>
         if (damagable)
         {
             damagable.ChangeHealth(-this.damage);
+        }
+
+        Collider collider = this.GetComponent<Collider>();
+
+        Debug.Log("Collision " + collider.transform.name);
+
+        Vector3 raycastOrigin = collider.bounds.center;
+        Vector3 raycastDirection = (other.transform.position - raycastOrigin).normalized;
+        Physics.Raycast(raycastOrigin, raycastDirection, out RaycastHit hit, 0.5f);
+
+        //Stick into target
+        if (hit.collider != null)
+        {
+            //Stop velocity
+            this.rb.velocity = Vector3.zero;
+            this.rb.isKinematic = true;
+
+            //Set new parent, position, and rotation
+            this.transform.SetParent(other.transform);
+            this.transform.position = hit.point;
+            this.transform.LookAt(hit.point);
+
+            Debug.Log("Ammo Stuck");
         }
     }
 }
