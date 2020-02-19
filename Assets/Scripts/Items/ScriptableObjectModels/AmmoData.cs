@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AmmoData", menuName = "ItemData")]
+[CreateAssetMenu(fileName = "AmmoData", menuName = "ItemData/AmmoData")]
 public class AmmoData : ItemData
 {
     [System.Flags]

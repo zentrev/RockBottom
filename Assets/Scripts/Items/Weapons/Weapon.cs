@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class Weapon : Item<WeaponData>
 {
-    
+    private Ammo ammo;
+
+    public void SetAmmo(Ammo ammo)
+    {
+        //if(ammo)
+    }
 }

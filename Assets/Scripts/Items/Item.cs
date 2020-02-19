@@ -10,5 +10,5 @@ public abstract class Item<T> : MonoBehaviour where T : ItemData
 
     }
 
-    public T Data { get; set; }
+    public T data;
 }
