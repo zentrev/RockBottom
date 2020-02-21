@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Button))]
+//[RequireComponent(typeof(Button))]
 public class ChangeLevelButton : MonoBehaviour
 {
     [SerializeField] string scenename = "MapleLeafSyrupTower";
@@ -30,6 +30,10 @@ public class ChangeLevelButton : MonoBehaviour
             if (scenename != "Quit")
             {
                 SceneManager.LoadScene(scenename);
+            }
+            else
+            {
+                Application.Quit();
             }
         }
     }
