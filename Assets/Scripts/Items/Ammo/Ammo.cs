@@ -7,6 +7,8 @@ public class Ammo : Item<AmmoData>
 {
     [SerializeField]
     private Rigidbody rb;
+    [SerializeField]
+    private Transform parent;
     private float damage = 100.0f;
 
     public void Start()
@@ -17,6 +19,11 @@ public class Ammo : Item<AmmoData>
             {
                 Debug.Log("Ammo Components not properly set or found.");
             }
+        }
+
+        if(parent == null)
+        {
+            parent = transform.parent;
         }
     }
 
@@ -40,7 +47,7 @@ public class Ammo : Item<AmmoData>
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("Ammo Collision");
-        Damagable damagable = other.transform.GetComponent<Damagable>();
+        Damagable damagable = other.transform.GetComponentInParent<Damagable>();
 
         if (damagable)
         {
@@ -63,9 +70,20 @@ public class Ammo : Item<AmmoData>
             this.rb.isKinematic = true;
 
             //Set new parent, position, and rotation
-            this.transform.SetParent(other.transform);
-            this.transform.position = hit.point;
+            parent.transform.SetParent(other.transform);
             this.transform.LookAt(hit.point);
+            this.transform.position = hit.point;
+
+            Collider[] colliders = parent.GetComponentsInChildren<Collider>();
+            foreach(Collider col in colliders)
+            {
+                col.enabled = false;
+            }
+
+            if(hit.collider.TryGetComponent<Rigidbody>(out Rigidbody otherRB))
+            {
+                otherRB.AddForceAtPosition(Vector3.back * 100, hit.point, ForceMode.Impulse);
+            }
 
             Debug.Log("Ammo Stuck");
         }
