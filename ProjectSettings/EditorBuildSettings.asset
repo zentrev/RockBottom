@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CanadianSandCastle.unity
     guid: 4fbdb8522c55df245ae0ece3ee593ab3
-  - enabled: 1
-    path: Assets/Scenes/MapleLeafSyrupTower.unity
-    guid: 30c7acd762e94e24f90e844a83210e8a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
