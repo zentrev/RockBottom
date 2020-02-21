@@ -554,6 +554,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 6493365093192934441, guid: 53b41a291a3e96b4db8bbde301ed0477,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7993682925481139546, guid: 53b41a291a3e96b4db8bbde301ed0477,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -20,7 +20,7 @@ public class ActivateRagDoll : MonoBehaviour
         }
     }
 
-    void OnRagdoll()
+    public void OnRagdoll()
     {
         m_navCollider.enabled = false;
         m_holdingPin.isKinematic = false;
