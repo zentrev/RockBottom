@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &642668705836660166
+--- !u!1001 &4844437962982931065
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -69,11 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8523fee91e00144c91150c19e27bfa1, type: 3}
---- !u!54 &1231590583576598556 stripped
+--- !u!54 &6541105162569144227 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1872453820100636122, guid: d8523fee91e00144c91150c19e27bfa1,
     type: 3}
-  m_PrefabInstance: {fileID: 642668705836660166}
+  m_PrefabInstance: {fileID: 4844437962982931065}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6329413110951856396
 PrefabInstance:
@@ -86,6 +86,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_HeavyKnight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379516398860476795, guid: a84688e85aec33e4188f1bf5e463bc4d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4738656717575466118, guid: a84688e85aec33e4188f1bf5e463bc4d,
         type: 3}
@@ -146,7 +151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_holdingPin
       value: 
-      objectReference: {fileID: 1231590583576598556}
+      objectReference: {fileID: 6541105162569144227}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a84688e85aec33e4188f1bf5e463bc4d, type: 3}
 --- !u!4 &1591319455301297546 stripped

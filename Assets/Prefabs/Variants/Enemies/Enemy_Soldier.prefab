@@ -71,7 +71,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_holdingPin
       value: 
-      objectReference: {fileID: 6869843340265975118}
+      objectReference: {fileID: 9112802647585753417}
+    - target: {fileID: 8423517814388338915, guid: a84688e85aec33e4188f1bf5e463bc4d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a84688e85aec33e4188f1bf5e463bc4d, type: 3}
 --- !u!4 &7386251216072825413 stripped
@@ -80,7 +85,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2828871298666198723}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6380481247513010239
+--- !u!1001 &8767873252933076024
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -147,13 +152,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldiers
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7170428545931448671, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
-    - {fileID: 7834571644713151505, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
---- !u!54 &6869843340265975118 stripped
+--- !u!54 &9112802647585753417 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 565927418446941553, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
     type: 3}
-  m_PrefabInstance: {fileID: 6380481247513010239}
+  m_PrefabInstance: {fileID: 8767873252933076024}
   m_PrefabAsset: {fileID: 0}
