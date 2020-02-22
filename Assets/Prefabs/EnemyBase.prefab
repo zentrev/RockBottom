@@ -87,6 +87,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664877d3ed43849429416b4f79566801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_navCollider: {fileID: 0}
+  m_navCollider: {fileID: 1510966160151062760}
   m_holdingPin: {fileID: 0}
   trigger: 0
