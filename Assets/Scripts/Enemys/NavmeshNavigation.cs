@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class NavmeshNavigation : MonoBehaviour
 {
     #region Serialize Fields
-    [Header("Movment")]
+    [Header("Movement")]
     [SerializeField] private float m_maxSpeed = 10.0f;
     [SerializeField] private float m_accleration = 1.0f;
     [SerializeField] private float m_rotationAccleration = 10.0f;
@@ -45,7 +45,7 @@ public class NavmeshNavigation : MonoBehaviour
         {
             GeneratePath();
 
-            if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < 2f)
+            if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < 2.0f)
             {
                 if (m_navPath.corners.Length > m_navCorner) m_navCorner++;
                 if (m_navCorner == m_navPath.corners.Length) m_direction = Vector3.zero;
@@ -112,7 +112,7 @@ public class NavmeshNavigation : MonoBehaviour
                     damagable.Annihilate();
                 }
             }
-
+            
             Debug.Log(m_navPath.status);
             Debug.Log(m_navPath.corners.Length);
 
