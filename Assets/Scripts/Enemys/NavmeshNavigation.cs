@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class NavmeshNavigation : MonoBehaviour
 {
     #region Serialize Fields
-    [Header("Movment")]
+    [Header("Movement")]
     [SerializeField] private float m_maxSpeed = 10.0f;
     [SerializeField] private float m_accleration = 1.0f;
     [SerializeField] private float m_rotationAccleration = 10.0f;
