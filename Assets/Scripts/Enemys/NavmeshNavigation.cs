@@ -13,11 +13,12 @@ public class NavmeshNavigation : MonoBehaviour
 
     [SerializeField] private Transform m_target = null;
     [SerializeField] private float m_pathGenRate = 1.0f;
-    [SerializeField] private int m_lostRetrys = 3;
 
     #endregion
 
     #region Private Varibles
+
+    private Rigidbody m_rb = null;
 
     private NavMeshPath m_navPath = null;
     private int m_navCorner = 0;
@@ -26,35 +27,27 @@ public class NavmeshNavigation : MonoBehaviour
     private Vector3 m_velocity = Vector3.zero;
 
     private float m_pathGenTicker = 0.0f;
-    private int m_lostNavPathCounter = 0;
-
     #endregion
 
-
-    #region Propierties
-
-    public bool InControl { get; set; } = true;
-    public Transform Target { get => m_target; set => m_target = value; }
-
-    #endregion
-
+    void Start()
+    {
+        TryGetComponent(out m_rb);
+    }
 
     void Update()
     {
-        if (InControl)
+        GeneratePath();
+
+
+        if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < 2f)
         {
-            GeneratePath();
-
-            if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < 2f)
-            {
-                if (m_navPath.corners.Length > m_navCorner) m_navCorner++;
-                if (m_navCorner == m_navPath.corners.Length) m_direction = Vector3.zero;
-            }
-
-            UpdateLook();
-
-            UpdateMovment();
+            if (m_navPath.corners.Length > m_navCorner) m_navCorner++;
+            if (m_navCorner == m_navPath.corners.Length) m_direction = Vector3.zero;
         }
+
+        UpdateLook();
+
+        UpdateMovment();
     }
 
     private void UpdateLook()
@@ -81,39 +74,22 @@ public class NavmeshNavigation : MonoBehaviour
 
     private void GeneratePath()
     {
-        if(Target == null)
-        {
-            Debug.LogError($"No Target on {gameObject.name} NavmeshNavigation");
-            return;
-        }
-
-        NavMeshPath oldPath = m_navPath;
-
         m_pathGenTicker += Time.deltaTime;
         if (m_pathGenTicker >= m_pathGenRate)
         {
-            m_pathGenTicker = 0;
             m_navPath = new NavMeshPath();
 
             m_navCorner = 0;
-            if (NavMesh.CalculatePath(transform.position, Target.position, NavMesh.AllAreas, m_navPath))
+            if (NavMesh.CalculatePath(transform.position, m_target.position, NavMesh.AllAreas, m_navPath))
             {
                 Debug.Log("Worked");
-                m_lostNavPathCounter = 0;
             }
             else
             {
                 Debug.Log("Failed");
-                m_navPath = oldPath;
-                m_lostNavPathCounter++;
-                Debug.Log($"lost count {m_lostNavPathCounter}");
-                if(m_lostNavPathCounter >= m_lostRetrys && TryGetComponent<Damagable>(out Damagable damagable))
-                {
-                    damagable.Annihilate();
-                }
             }
-
             Debug.Log(m_navPath.status);
+
             Debug.Log(m_navPath.corners.Length);
 
 
