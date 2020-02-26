@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: 1de35272cfa7ed14e888157c41c09a4a
 PrefabImporter:
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: 
+      assembly: 
+      name: 
+    second: {instanceID: 0}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
