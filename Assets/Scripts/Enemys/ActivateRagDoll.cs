@@ -15,6 +15,7 @@ public class ActivateRagDoll : MonoBehaviour
     private void Start()
     {
         if (m_holdingPin == null) Debug.LogError($"{gameObject.name} ActivateRagDoll is missing holding pin");
+        else m_holdingPin.isKinematic = true;
     }
 
     private void Update()
