@@ -9,18 +9,24 @@ public class ActivateRagDoll : MonoBehaviour
     [SerializeField] Rigidbody m_holdingPin = null;
     #endregion
 
-    public bool trigger = false;
+    // Remove HidInInspector to allow for editor triggering
+    [HideInInspector] public bool trigger = false;
+
+    private void Start()
+    {
+        if (m_holdingPin == null) Debug.LogError($"{gameObject.name} ActivateRagDoll is missing holding pin");
+    }
 
     private void Update()
     {
         if(trigger)
         {
             trigger = false;
-            OnRagdoll();
+            ActivateRagdoll();
         }
     }
 
-    public void OnRagdoll()
+    public void ActivateRagdoll()
     {
         m_navCollider.enabled = false;
         m_holdingPin.isKinematic = false;
