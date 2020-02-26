@@ -18,8 +18,6 @@ public class NavmeshNavigation : MonoBehaviour
 
     #region Private Varibles
 
-    private Rigidbody m_rb = null;
-
     private NavMeshPath m_navPath = null;
     private int m_navCorner = 0;
 
@@ -27,12 +25,11 @@ public class NavmeshNavigation : MonoBehaviour
     private Vector3 m_velocity = Vector3.zero;
 
     private float m_pathGenTicker = 0.0f;
+
+    public Transform Target { get => m_target; set => m_target = value; }
+
     #endregion
 
-    void Start()
-    {
-        TryGetComponent(out m_rb);
-    }
 
     void Update()
     {
@@ -74,13 +71,19 @@ public class NavmeshNavigation : MonoBehaviour
 
     private void GeneratePath()
     {
+        if(Target == null)
+        {
+            Debug.LogError($"No Target on {gameObject.name} NavmeshNavigation");
+            return;
+        }
+
         m_pathGenTicker += Time.deltaTime;
         if (m_pathGenTicker >= m_pathGenRate)
         {
             m_navPath = new NavMeshPath();
 
             m_navCorner = 0;
-            if (NavMesh.CalculatePath(transform.position, m_target.position, NavMesh.AllAreas, m_navPath))
+            if (NavMesh.CalculatePath(transform.position, Target.position, NavMesh.AllAreas, m_navPath))
             {
                 Debug.Log("Worked");
             }
