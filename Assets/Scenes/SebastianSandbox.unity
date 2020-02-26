@@ -559,7 +559,7 @@ PrefabInstance:
     - target: {fileID: 3349670316422006450, guid: 367001929163a7d40a13df151f86101f,
         type: 3}
       propertyPath: m_rotationAccleration
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3349670316422006450, guid: 367001929163a7d40a13df151f86101f,
         type: 3}
