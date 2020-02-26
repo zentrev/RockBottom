@@ -38,4 +38,9 @@ public class Damagable : MonoBehaviour
             deathEvent.Invoke();
         }
     }
+
+    public void Annihilate()
+    {
+        ChangeHealth(-health);
+    }
 }
