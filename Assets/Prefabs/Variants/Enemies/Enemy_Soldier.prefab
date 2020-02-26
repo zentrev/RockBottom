@@ -152,7 +152,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldiers
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7834571644713151505, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
+    - {fileID: 7170428545931448671, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
 --- !u!54 &9112802647585753417 stripped
 Rigidbody:
