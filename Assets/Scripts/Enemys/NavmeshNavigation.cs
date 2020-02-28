@@ -56,10 +56,10 @@ public class NavmeshNavigation : MonoBehaviour
             }
 
             UpdateLook();
+
+            UpdateMovment();
+
         }
-
-        UpdateMovment();
-
 
     }
 
