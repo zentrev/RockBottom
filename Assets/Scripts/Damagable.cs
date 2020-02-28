@@ -36,6 +36,7 @@ public class Damagable : MonoBehaviour
         {
             Debug.Log("Dead");
             deathEvent.Invoke();
+            if(WaveManager.Instance != null) WaveManager.Instance.RemoveMe(this.gameObject);
         }
     }
 
