@@ -38,16 +38,29 @@ public class NavmeshNavigation : MonoBehaviour
     {
         GeneratePath();
 
-
-        if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < 2f)
+        m_direction = transform.forward;
+        if (m_navPath != null)
         {
-            if (m_navPath.corners.Length > m_navCorner) m_navCorner++;
-            if (m_navCorner == m_navPath.corners.Length) m_direction = Vector3.zero;
+            if (m_navPath.status != NavMeshPathStatus.PathComplete)
+            {
+                m_direction = Vector3.zero;
+            }
+            else if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < 2f)
+            {
+                if (m_navPath.corners.Length > m_navCorner) m_navCorner++;
+                if (m_navCorner == m_navPath.corners.Length)
+                {
+                    m_direction = Vector3.zero;
+                    m_navCorner = m_navPath.corners.Length - 1;
+                }
+            }
+
+            UpdateLook();
         }
 
-        UpdateLook();
-
         UpdateMovment();
+
+
     }
 
     private void UpdateLook()
@@ -61,10 +74,6 @@ public class NavmeshNavigation : MonoBehaviour
 
     private void UpdateMovment()
     {
-        m_direction = transform.forward;
-
-        m_direction = m_direction.normalized;
-
         Vector3 target = m_direction * m_maxSpeed * Time.deltaTime;
 
         m_velocity = Vector3.Lerp(m_velocity, target, m_accleration * Time.deltaTime);
@@ -77,6 +86,7 @@ public class NavmeshNavigation : MonoBehaviour
         m_pathGenTicker += Time.deltaTime;
         if (m_pathGenTicker >= m_pathGenRate)
         {
+            m_pathGenTicker = 0;
             m_navPath = new NavMeshPath();
 
             m_navCorner = 0;
