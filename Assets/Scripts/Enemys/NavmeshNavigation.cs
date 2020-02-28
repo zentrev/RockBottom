@@ -58,9 +58,7 @@ public class NavmeshNavigation : MonoBehaviour
             UpdateLook();
 
             UpdateMovment();
-
         }
-
     }
 
     private void UpdateLook()
@@ -77,7 +75,6 @@ public class NavmeshNavigation : MonoBehaviour
         Vector3 target = m_direction * m_maxSpeed * Time.deltaTime;
 
         m_velocity = Vector3.Lerp(m_velocity, target, m_accleration * Time.deltaTime);
-        Debug.Log(m_velocity);
         transform.position += m_velocity;
     }
 
