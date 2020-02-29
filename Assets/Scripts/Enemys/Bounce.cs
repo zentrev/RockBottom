@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    public Rigidbody rb;
+    public Rigidbody bounceRoot;
     private float timer;
     [SerializeField]
-    private float speed = 5.0f;
+    private float speed = 10.0f, parentVerticalOffset = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (rb == null)
+        if (bounceRoot == null)
         {
             Debug.Log("No RigidBody connected.");
         }
@@ -29,15 +29,16 @@ public class Bounce : MonoBehaviour
         }
 
         float newY = Mathf.Sin(timer);
-        Vector3 movement = new Vector3(rb.transform.position.x, rb.transform.position.y + (newY * Time.deltaTime), rb.transform.position.z) - rb.transform.position;
-        rb.MovePosition(movement);
-        //rb.transform.Translate(movement, Space.World);
+        Vector3 movement = new Vector3(bounceRoot.transform.position.x, bounceRoot.transform.position.y + (newY * Time.deltaTime), bounceRoot.transform.position.z) - bounceRoot.transform.position;
+        bounceRoot.transform.Translate(movement, Space.World);
 
-        Vector3 parentDistance = rb.transform.parent.position - rb.transform.position;
+        Vector3 parentPosition = bounceRoot.transform.parent.position;
+        Vector3 parentDistance = new Vector3(parentPosition.x, parentPosition.y + this.parentVerticalOffset, parentPosition.z) - bounceRoot.transform.position;
 
-        while (parentDistance.magnitude > 0.5f)
+        //Restrict bounce (prevents slowly drifing up/down due to slight timing offsets)
+        if (parentDistance.magnitude > 0.6f)
         {
-            rb.transform.Translate(parentDistance.normalized, Space.World);
+            bounceRoot.transform.Translate(parentDistance.normalized * (parentDistance.magnitude - 0.5f), Space.World);
         }
     }
 }

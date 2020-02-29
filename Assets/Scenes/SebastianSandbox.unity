@@ -222,6 +222,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 3644754723344867173, guid: 70ae88abfa6fcfa4394f45f37f1fcea1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7993682925481139546, guid: 70ae88abfa6fcfa4394f45f37f1fcea1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,9 +408,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1392218025 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 565927418443795594, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7486277761494023895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1566160847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 565927418572394114, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7486277761494023895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1733464986 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 565927419847710686, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
     type: 3}
   m_PrefabInstance: {fileID: 7486277761494023895}
   m_PrefabAsset: {fileID: 0}
@@ -775,7 +792,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd7b78a7f3a8d9469580f9fffeab54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 349308830}
+  bounceRoot: {fileID: 349308830}
+  leftShoulder: {fileID: 1392218025}
+  rightShoulder: {fileID: 1733464986}
+  speed: 10
+  parentVerticalOffset: 0.5
 --- !u!1001 &7486277761494023895
 PrefabInstance:
   m_ObjectHideFlags: 0
