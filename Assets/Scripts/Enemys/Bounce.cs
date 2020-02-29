@@ -6,6 +6,8 @@ public class Bounce : MonoBehaviour
 {
     public Rigidbody rb;
     private float timer;
+    [SerializeField]
+    private float speed = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +21,23 @@ public class Bounce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime * speed;
+
+        if (timer >= 180.0f)
+        {
+            timer = 0.0f;
+        }
+
         float newY = Mathf.Sin(timer);
-        Debug.Log(newY);
-        rb.position.Set(rb.position.x, rb.position.y + newY, rb.position.z);
-        //rb.MovePosition(new Vector3(rb.position.x, rb.position.y + newY, rb.position.z));
+        Vector3 movement = new Vector3(rb.transform.position.x, rb.transform.position.y + (newY * Time.deltaTime), rb.transform.position.z) - rb.transform.position;
+        rb.MovePosition(movement);
+        //rb.transform.Translate(movement, Space.World);
+
+        Vector3 parentDistance = rb.transform.parent.position - rb.transform.position;
+
+        while (parentDistance.magnitude > 0.5f)
+        {
+            rb.transform.Translate(parentDistance.normalized, Space.World);
+        }
     }
 }

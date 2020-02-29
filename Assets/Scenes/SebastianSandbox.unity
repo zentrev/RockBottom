@@ -204,6 +204,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.863, y: 0, z: 0}
+--- !u!54 &349308830 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1408952553260654940, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7486277761494023895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &790199373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -647,12 +653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdac52dfbacbf0a4e96f80dca3a9849f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &1869209853 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 565927418446941553, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 7486277761494023895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1780330578825475389
 Transform:
   m_ObjectHideFlags: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_navCollider: {fileID: 5588423569009963347}
-  m_holdingPin: {fileID: 1869209853}
+  m_holdingPin: {fileID: 349308830}
   trigger: 0
 --- !u!136 &5588423569009963347
 CapsuleCollider:
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd7b78a7f3a8d9469580f9fffeab54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1869209853}
+  rb: {fileID: 349308830}
 --- !u!1001 &7486277761494023895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -791,17 +791,17 @@ PrefabInstance:
     - target: {fileID: 565927418446941553, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 565927418446941553, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
-        type: 3}
-      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 565927418446941553, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
         type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 565927418446941553, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
+        type: 3}
       propertyPath: m_Constraints
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 565927418526292291, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
         type: 3}
@@ -907,6 +907,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -19.098902
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408952553260654940, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
