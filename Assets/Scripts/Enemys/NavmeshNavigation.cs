@@ -27,6 +27,8 @@ public class NavmeshNavigation : MonoBehaviour
     private Vector3 m_velocity = Vector3.zero;
 
     private float m_pathGenTicker = 0.0f;
+
+    public Transform Target { get => m_target; set => m_target = value; }
     #endregion
 
     void Start()
@@ -58,9 +60,7 @@ public class NavmeshNavigation : MonoBehaviour
             UpdateLook();
 
             UpdateMovment();
-
         }
-
     }
 
     private void UpdateLook()
@@ -77,7 +77,6 @@ public class NavmeshNavigation : MonoBehaviour
         Vector3 target = m_direction * m_maxSpeed * Time.deltaTime;
 
         m_velocity = Vector3.Lerp(m_velocity, target, m_accleration * Time.deltaTime);
-        Debug.Log(m_velocity);
         transform.position += m_velocity;
     }
 
@@ -90,7 +89,7 @@ public class NavmeshNavigation : MonoBehaviour
             m_navPath = new NavMeshPath();
 
             m_navCorner = 0;
-            if (NavMesh.CalculatePath(transform.position, m_target.position, NavMesh.AllAreas, m_navPath))
+            if (NavMesh.CalculatePath(transform.position, Target.position, NavMesh.AllAreas, m_navPath))
             {
                 Debug.Log("Worked");
             }
