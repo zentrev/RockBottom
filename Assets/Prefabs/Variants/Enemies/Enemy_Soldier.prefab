@@ -87,6 +87,11 @@ PrefabInstance:
       propertyPath: m_maxSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8577806363120759007, guid: 227c426cd6c5e0e4bbd526c566ad8328,
+        type: 3}
+      propertyPath: m_holdingPin
+      value: 
+      objectReference: {fileID: 8388239167392116829}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 227c426cd6c5e0e4bbd526c566ad8328, type: 3}
 --- !u!4 &1780330580601101035 stripped

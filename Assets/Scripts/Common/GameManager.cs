@@ -17,12 +17,12 @@ public class GameManager : Singleton<GameManager>
         
     }
 
-    public int getGold()
+    public int GetGold()
     {
         return gold;
     }
 
-    public void setGold(int value)
+    public void AddGold(int value)
     {
         gold += value;
     }

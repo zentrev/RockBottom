@@ -18,6 +18,9 @@ public class NavmeshNavigation : MonoBehaviour
     [SerializeField] Collider m_navCollider = null;
     [SerializeField] Rigidbody m_holdingPin = null;
 
+    [Header("Gameplay")]
+    [SerializeField] int gold = 100;
+
     #endregion
 
     #region Private Varibles
@@ -121,5 +124,10 @@ public class NavmeshNavigation : MonoBehaviour
     {
         m_navCollider.enabled = false;
         m_holdingPin.isKinematic = false;
+    }
+
+    public void AddGold()
+    {
+        GameManager.Instance.AddGold(this.gold);
     }
 }
