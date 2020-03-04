@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 public class WaveManager : Singleton<WaveManager>
 {
-    [SerializeField] [Range(1, 10)] int m_waves = 5;
+    [SerializeField] [Range(1, 15)] int m_waves = 5;
 
     public bool NextWaveAvalibe { get; set; } = true;
     public int CurentWave { get; set; } = 0;
@@ -13,7 +13,7 @@ public class WaveManager : Singleton<WaveManager>
     [SerializeField] Transform[] m_targets = null;
 
     [SerializeField] [Range(1, 15)] int m_minEnemys = 1;
-    [SerializeField] [Range(1, 50)] int m_maxEnemys = 15;
+    [SerializeField] [Range(1, 25)] int m_maxEnemys = 15;
     [SerializeField] AnimationCurve m_enemyCount = null;
 
     [SerializeField] Transform m_dynamicRoot = null;
