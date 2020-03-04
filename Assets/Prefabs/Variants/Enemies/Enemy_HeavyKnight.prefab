@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_HeavyKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 3458232466575949868, guid: 227c426cd6c5e0e4bbd526c566ad8328,
+        type: 3}
+      propertyPath: bounceRoot
+      value: 
+      objectReference: {fileID: 7733042500107072199}
     - target: {fileID: 4738656717575466118, guid: 227c426cd6c5e0e4bbd526c566ad8328,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,7 +76,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_holdingPin
       value: 
-      objectReference: {fileID: 7733042500431854754}
+      objectReference: {fileID: 7733042500107072199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 227c426cd6c5e0e4bbd526c566ad8328, type: 3}
 --- !u!4 &1780330580601101035 stripped
@@ -149,9 +154,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8523fee91e00144c91150c19e27bfa1, type: 3}
---- !u!54 &7733042500431854754 stripped
+--- !u!54 &7733042500107072199 stripped
 Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1872453820100636122, guid: d8523fee91e00144c91150c19e27bfa1,
+  m_CorrespondingSourceObject: {fileID: 1872453820843795391, guid: d8523fee91e00144c91150c19e27bfa1,
     type: 3}
   m_PrefabInstance: {fileID: 8263265267368776056}
   m_PrefabAsset: {fileID: 0}

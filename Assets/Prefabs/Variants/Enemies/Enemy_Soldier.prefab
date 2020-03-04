@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 3458232466575949868, guid: 227c426cd6c5e0e4bbd526c566ad8328,
+        type: 3}
+      propertyPath: bounceRoot
+      value: 
+      objectReference: {fileID: 8388239167392116829}
     - target: {fileID: 4738656717575466118, guid: 227c426cd6c5e0e4bbd526c566ad8328,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,7 +76,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_holdingPin
       value: 
-      objectReference: {fileID: 6934991508696783984}
+      objectReference: {fileID: 8388239167392116829}
     - target: {fileID: 8577806363120759007, guid: 227c426cd6c5e0e4bbd526c566ad8328,
         type: 3}
       propertyPath: m_rotationAccleration
@@ -159,9 +164,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e4dde1dd982fe4ba302fd29a1a89ca, type: 3}
---- !u!54 &6934991508696783984 stripped
+--- !u!54 &8388239167392116829 stripped
 Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 565927418446941553, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
+  m_CorrespondingSourceObject: {fileID: 1408952553260654940, guid: 89e4dde1dd982fe4ba302fd29a1a89ca,
     type: 3}
   m_PrefabInstance: {fileID: 7486277761046663425}
   m_PrefabAsset: {fileID: 0}
