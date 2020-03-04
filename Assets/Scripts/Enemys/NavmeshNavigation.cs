@@ -14,6 +14,10 @@ public class NavmeshNavigation : MonoBehaviour
     [SerializeField] private Transform m_target = null;
     [SerializeField] private float m_pathGenRate = 1.0f;
 
+    [Header("Ragdoll")]
+    [SerializeField] Collider m_navCollider = null;
+    [SerializeField] Rigidbody m_holdingPin = null;
+
     #endregion
 
     #region Private Varibles
@@ -34,6 +38,9 @@ public class NavmeshNavigation : MonoBehaviour
     void Start()
     {
         TryGetComponent(out m_rb);
+
+        if (m_holdingPin == null) Debug.LogError($"{gameObject.name} NavmeshNavigation is missing holding pin");
+        else m_holdingPin.isKinematic = true;
     }
 
     void Update()
@@ -108,6 +115,11 @@ public class NavmeshNavigation : MonoBehaviour
                 //Debug.Log(m_navPath.corners[i] + " : " + m_navPath.corners[i + 1]);
             }
         }
+    }
 
+    public void ActivateRagdoll()
+    {
+        m_navCollider.enabled = false;
+        m_holdingPin.isKinematic = false;
     }
 }

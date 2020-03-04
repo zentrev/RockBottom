@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActivateRagDoll : MonoBehaviour
 {
-    #region Serialize Feilds
+    #region Serialize Fields
     [SerializeField] Collider m_navCollider = null;
     [SerializeField] Rigidbody m_holdingPin = null;
     #endregion
