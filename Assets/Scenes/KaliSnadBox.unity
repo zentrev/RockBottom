@@ -890,7 +890,7 @@ MonoBehaviour:
   m_targets:
   - {fileID: 2061572621}
   m_minEnemys: 1
-  m_maxEnemys: 500
+  m_maxEnemys: 25
   m_enemyCount:
     serializedVersion: 2
     m_Curve:
