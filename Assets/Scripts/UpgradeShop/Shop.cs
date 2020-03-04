@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour
 
         for (int i = 0; i < ItemHolder.transform.childCount; i++)
         {
-            if (i == num)
+            if (i == activeItemNum)
             {
                 GameObject child = ItemHolder.transform.GetChild(i).gameObject;
                 child.SetActive(true);
