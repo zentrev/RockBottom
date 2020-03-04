@@ -37,9 +37,9 @@ public class Shop : MonoBehaviour
             {
                 GameObject child = ItemHolder.transform.GetChild(i).gameObject;
                 child.SetActive(true);
-                child.TryGetComponent<Rigidbody>(out Rigidbody rigidbody);
-                child.TryGetComponent<BoxCollider>(out BoxCollider boxy);
-                if (child.TryGetComponent<Purchasable>(out Purchasable item))
+                child.TryGetComponent(out Rigidbody rigidbody);
+                child.TryGetComponent(out BoxCollider boxy);
+                if (child.TryGetComponent(out Purchasable item))
                 {
                     if (GameManager.Instance.gold >= item.price)
                     {
