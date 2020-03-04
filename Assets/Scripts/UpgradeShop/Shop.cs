@@ -4,33 +4,58 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] List<GameObject> shopItems = new List<GameObject>();
-    // Start is called before the first frame update
-    void Start()
+    public GameObject ItemHolder = null;
+    public int activeItemNum = 0;
+
+    public void ShowNextItem()
     {
-        
+        activeItemNum++;
+        SetActiveItem();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowPrevItem()
     {
-        foreach(GameObject interactable in shopItems)
+        activeItemNum--;
+        SetActiveItem();
+    }
+
+    public void SetActiveItem()
+    {
+        if(activeItemNum > ItemHolder.transform.childCount-1)
         {
-            interactable.TryGetComponent<Rigidbody>(out Rigidbody rigidbody);
-            interactable.TryGetComponent<BoxCollider>(out BoxCollider boxy);
-            if(interactable.TryGetComponent<Purchasable>(out Purchasable item))
+            activeItemNum = 0;
+        }
+
+        if(activeItemNum < 0)
+        {
+            activeItemNum = ItemHolder.transform.childCount - 1;
+        }
+
+        for (int i = 0; i < ItemHolder.transform.childCount; i++)
+        {
+            if (i == activeItemNum)
             {
-                if(GameManager.Instance.gold >= item.price)
+                GameObject child = ItemHolder.transform.GetChild(i).gameObject;
+                child.SetActive(true);
+                child.TryGetComponent(out Rigidbody rigidbody);
+                child.TryGetComponent(out BoxCollider boxy);
+                if (child.TryGetComponent(out Purchasable item))
                 {
-                    
-                    rigidbody.isKinematic = false;
-                    boxy.enabled = true;
+                    if (GameManager.Instance.gold >= item.price)
+                    {
+                        rigidbody.isKinematic = false;
+                        boxy.enabled = true;
+                    }
+                    else
+                    {
+                        rigidbody.isKinematic = true;
+                        boxy.enabled = false;
+                    }
                 }
-                else
-                {
-                    rigidbody.isKinematic = true;
-                    boxy.enabled = false;
-                }
+            }
+            else
+            {
+                ItemHolder.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
     }
