@@ -69,9 +69,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74a17cf877797674d87beac73bc55ce4, type: 3}
---- !u!54 &7044121687617166318 stripped
+--- !u!54 &7044121689576674699 stripped
 Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8836793984659866666, guid: 74a17cf877797674d87beac73bc55ce4,
+  m_CorrespondingSourceObject: {fileID: 8836793984445155919, guid: 74a17cf877797674d87beac73bc55ce4,
     type: 3}
   m_PrefabInstance: {fileID: 1973462936743452612}
   m_PrefabAsset: {fileID: 0}
@@ -87,6 +87,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Berserker
       objectReference: {fileID: 0}
+    - target: {fileID: 3458232466575949868, guid: 227c426cd6c5e0e4bbd526c566ad8328,
+        type: 3}
+      propertyPath: bounceRoot
+      value: 
+      objectReference: {fileID: 7044121689576674699}
     - target: {fileID: 4738656717575466118, guid: 227c426cd6c5e0e4bbd526c566ad8328,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -146,7 +151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_holdingPin
       value: 
-      objectReference: {fileID: 7044121687617166318}
+      objectReference: {fileID: 7044121689576674699}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 227c426cd6c5e0e4bbd526c566ad8328, type: 3}
 --- !u!4 &1780330580601101035 stripped
