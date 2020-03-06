@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e29f525a1bf3264892ec9a818bfbaab, type: 3}
   m_Name: BoulderData
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  cost: 0
+  itemName: Boulder
+  description: Rock
+  cost: 2
   ammoType: 0
-  damageModifier: 0
+  damageModifier: 1
   speed: 0
   isInstant: 0
