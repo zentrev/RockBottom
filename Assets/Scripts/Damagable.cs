@@ -33,7 +33,7 @@ public class Damagable : MonoBehaviour
                 GameObject.Instantiate(this.healEffect, spawnLocation, Quaternion.identity);
             }
 
-            if (this.healAudio != null)
+            if (this.healAudio != null && !this.healAudio.isPlaying)
             {
                 this.healAudio.Play();
             }
@@ -46,7 +46,7 @@ public class Damagable : MonoBehaviour
                 GameObject.Instantiate(this.damageEffect, spawnLocation, Quaternion.identity);
             }
 
-            if (this.damageAudio != null)
+            if (this.damageAudio != null && !this.damageAudio.isPlaying)
             {
                 this.damageAudio.Play();
             }
