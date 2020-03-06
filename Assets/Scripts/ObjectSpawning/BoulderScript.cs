@@ -24,11 +24,12 @@ public class BoulderScript : MonoBehaviour
     {
         if (isThrown)
         {
-            animator.SetFloat("Timer", animator.GetFloat("Timer") - Time.deltaTime);
-            if (animator.GetFloat("Timer") <= -1.0f)
+            lifetime -= Time.deltaTime;
+            if (lifetime <= -1.0f)
             {
                 Destroy(gameObject);
             }
+            animator.SetFloat("Timer", lifetime);
         }
     }
 
