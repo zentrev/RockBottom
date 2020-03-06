@@ -219,12 +219,12 @@ PrefabInstance:
     - target: {fileID: 3644754723344867173, guid: 70ae88abfa6fcfa4394f45f37f1fcea1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7993682925481139546, guid: 70ae88abfa6fcfa4394f45f37f1fcea1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.524394
+      value: -2.46
       objectReference: {fileID: 0}
     - target: {fileID: 7993682925481139546, guid: 70ae88abfa6fcfa4394f45f37f1fcea1,
         type: 3}
@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 7993682925481139546, guid: 70ae88abfa6fcfa4394f45f37f1fcea1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.2767854
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7993682925481139546, guid: 70ae88abfa6fcfa4394f45f37f1fcea1,
         type: 3}
@@ -694,6 +694,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  damageEffect: {fileID: 0}
+  healEffect: {fileID: 0}
+  damageAudio: {fileID: 0}
+  healAudio: {fileID: 0}
   deathEvent:
     m_PersistentCalls:
       m_Calls:

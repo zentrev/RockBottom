@@ -49,9 +49,9 @@ public class Ammo : Item<AmmoData>
         Debug.Log("Ammo Collision");
         Damagable damagable = other.transform.GetComponentInParent<Damagable>();
 
-        if (damagable)
+        if (damagable && !damagable.IsDead)
         {
-            damagable.ChangeHealth(-this.damage);
+            damagable.ChangeHealth(-this.damage, this.transform.position);
         }
 
         Collider collider = this.GetComponent<Collider>();

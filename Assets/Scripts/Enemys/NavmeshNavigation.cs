@@ -124,6 +124,7 @@ public class NavmeshNavigation : MonoBehaviour
     {
         m_navCollider.enabled = false;
         m_holdingPin.isKinematic = false;
+        Destroy(this.gameObject, 10.0f);
     }
 
     public void AddGold()
