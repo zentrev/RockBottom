@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.rockbottom.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Jon\\Desktop\\RockBottom\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\Kaedian Maxfield\\Desktop\\GameLand\\RockBottom\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Rock Bottom [Testing]"

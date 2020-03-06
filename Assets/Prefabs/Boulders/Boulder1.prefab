@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6199289563439549796}
   - component: {fileID: 6199289563439549794}
   - component: {fileID: -4547374491695194623}
+  - component: {fileID: 2986529093315872888}
   m_Layer: 0
   m_Name: Boulder1
   m_TagString: Untagged
@@ -290,3 +291,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 5
+--- !u!114 &2986529093315872888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199289562685789983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293f399fd58072541ae6411ccdb8d873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: d437a9315f5ed24499ab7c6fa6ff8cf1, type: 2}
+  rb: {fileID: 6199289563439549797}
+  parent: {fileID: 0}
