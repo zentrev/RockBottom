@@ -9,6 +9,8 @@ public class Ammo : Item<AmmoData>
     private Rigidbody rb;
     [SerializeField]
     private Transform parent;
+    [SerializeField]
+    private GameObject hitEffect;
     private float damage = 100.0f;
 
     public void Start()
@@ -27,7 +29,7 @@ public class Ammo : Item<AmmoData>
         }
     }
 
-    public void SetDamage(float weaponBaseDamage)
+    public void SetDamage(float weaponBaseDamage = 1.0f)
     {
         this.damage = weaponBaseDamage * this.data.damageModifier;
     }
@@ -52,6 +54,11 @@ public class Ammo : Item<AmmoData>
         if (damagable && !damagable.IsDead)
         {
             damagable.ChangeHealth(-this.damage, this.transform.position);
+
+            if (this.hitEffect != null)
+            {
+                GameObject.Instantiate(this.hitEffect, this.transform.position, Quaternion.identity);
+            }
         }
 
         Collider collider = this.GetComponent<Collider>();
