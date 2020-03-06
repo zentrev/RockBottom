@@ -85,6 +85,7 @@ public class Shop : MonoBehaviour
         if(gameManager.gold - item.price > 0)
         {
             gameManager.gold -= item.price;
+            MoneyText.text = gameManager.gold.ToString();
             item.price = 0;
         }
     }
