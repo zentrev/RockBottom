@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPersistant: 0
   GameOverCanvas: {fileID: 0}
-  CanvasYOffset: 10
+  CanvasYOffset: 0
