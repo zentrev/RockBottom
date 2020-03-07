@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59be5c3b88b60ba42af7e13100602571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenename: MapleLeafSyrupTower
+  scenename: Level
 --- !u!1 &393626759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1327,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MolotovBurst 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000125048074143572, guid: e0c8d2c5df8374042aa7d931f0735da1,
+        type: 3}
+      propertyPath: stopAction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000125048074143572, guid: e0c8d2c5df8374042aa7d931f0735da1,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000125048074143572, guid: e0c8d2c5df8374042aa7d931f0735da1,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2000125048074143573, guid: e0c8d2c5df8374042aa7d931f0735da1,
         type: 3}
@@ -3081,6 +3096,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.522
@@ -3116,12 +3135,12 @@ PrefabInstance:
     - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: renderModelPrefab
       value: 
-      objectReference: {fileID: 1000012617731570, guid: 4c5fea2300124fe49a30168e29627064,
+      objectReference: {fileID: 1000012617731570, guid: 837f93beb9a614743ae3a2c0ada7c388,
         type: 3}
     - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: renderModelPrefab
       value: 
-      objectReference: {fileID: 1000011547835092, guid: 534d2fcf558316441a41841275676807,
+      objectReference: {fileID: 1000011547835092, guid: d5082f7d9f947374197e0a97786f4e40,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -4085,6 +4104,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1422135194}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1710112194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 101548, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1394819617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1713434109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4744,6 +4769,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1223982394509675144, guid: 19ad286c7c654b948835230250fad69f,
+        type: 3}
+      propertyPath: isPersistant
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223982394509675144, guid: 19ad286c7c654b948835230250fad69f,
+        type: 3}
+      propertyPath: Face
+      value: 
+      objectReference: {fileID: 1710112194}
     - target: {fileID: 1223982394509675149, guid: 19ad286c7c654b948835230250fad69f,
         type: 3}
       propertyPath: m_Name
@@ -4809,5 +4844,6 @@ PrefabInstance:
       propertyPath: shopItems.Array.data[0]
       value: 
       objectReference: {fileID: 598985494}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1223982394509675151, guid: 19ad286c7c654b948835230250fad69f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 19ad286c7c654b948835230250fad69f, type: 3}
