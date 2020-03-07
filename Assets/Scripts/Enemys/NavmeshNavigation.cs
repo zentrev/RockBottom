@@ -13,6 +13,7 @@ public class NavmeshNavigation : MonoBehaviour
 
     [SerializeField] private Transform m_target = null;
     [SerializeField] private float m_pathGenRate = 1.0f;
+    [SerializeField] [Range(0.0f, 10.0f)] float m_nodeTolorance = 2.0f;
 
     [Header("Ragdoll")]
     [SerializeField] Collider m_navCollider = null;
@@ -57,7 +58,7 @@ public class NavmeshNavigation : MonoBehaviour
             {
                 m_direction = Vector3.zero;
             }
-            else if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < 2f)
+            else if ((transform.position - m_navPath.corners[m_navCorner]).magnitude < m_nodeTolorance)
             {
                 if (m_navPath.corners.Length > m_navCorner) m_navCorner++;
                 if (m_navCorner == m_navPath.corners.Length)
