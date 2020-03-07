@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6199289563439549794}
   - component: {fileID: 717465971250046140}
   - component: {fileID: 633180285149825928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boulder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,3 +306,4 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: d437a9315f5ed24499ab7c6fa6ff8cf1, type: 2}
   rb: {fileID: 6199289563439549797}
   parent: {fileID: 0}
+  hitEffect: {fileID: 0}

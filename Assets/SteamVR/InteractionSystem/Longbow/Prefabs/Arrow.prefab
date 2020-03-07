@@ -6141,6 +6141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 03cb53191018198468dfedcaa646b851, type: 2}
   rb: {fileID: 5410824}
-  parent: {fileID: 0}
+  parent: {fileID: 485512}
   hitEffect: {fileID: 2000125048074143570, guid: e0c8d2c5df8374042aa7d931f0735da1,
     type: 3}
