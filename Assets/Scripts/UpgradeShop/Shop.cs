@@ -18,6 +18,11 @@ public class Shop : MonoBehaviour
         gameManager = GameManager.Instance;
     }
 
+    private void Update()
+    {
+        MoneyText.text = gameManager.gold.ToString();
+    }
+
     public void ShowNextItem()
     {
         activeItemNum++;
@@ -32,7 +37,7 @@ public class Shop : MonoBehaviour
 
     public void SetActiveItem()
     {
-        Debug.Log("Active Item Prev: " + activeItemNum);
+        //Debug.Log("Active Item Prev: " + activeItemNum);
 
         if(activeItemNum >= ItemHolder.transform.childCount)
         {
@@ -44,7 +49,7 @@ public class Shop : MonoBehaviour
             activeItemNum = ItemHolder.transform.childCount - 1;
         }
 
-        Debug.Log("Active Item After Clamp: " + activeItemNum);
+        //Debug.Log("Active Item After Clamp: " + activeItemNum);
 
         foreach(Transform child in ItemHolder.transform)
         {
@@ -82,10 +87,10 @@ public class Shop : MonoBehaviour
 
     public void PurchaseItem(Purchasable item)
     {
-        if(gameManager.gold - item.price > 0)
+        if(GameManager.Instance.gold - item.price >= 0)
         {
-            gameManager.gold -= item.price;
-            MoneyText.text = gameManager.gold.ToString();
+            GameManager.Instance.gold -= item.price;
+            
             item.price = 0;
         }
     }

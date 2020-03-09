@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 5425834}
   - component: {fileID: 13884258}
   - component: {fileID: 6557450}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: Arrowhead collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

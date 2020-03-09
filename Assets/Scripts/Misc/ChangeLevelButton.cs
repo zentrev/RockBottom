@@ -24,7 +24,6 @@ public class ChangeLevelButton : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("test");
         //Layer 9 = Ammo
         if(collision.gameObject.layer == 9)
         {
