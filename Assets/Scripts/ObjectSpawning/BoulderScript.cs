@@ -12,6 +12,7 @@ public class BoulderScript : MonoBehaviour
     private ObjectSpawn spawner = null;
     private Purchasable purchasable = null;
     private MeshCollider meshCollider = null;
+    private SphereCollider sphereCollider = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class BoulderScript : MonoBehaviour
         spawner = gameObject.GetComponentInParent<ObjectSpawn>();
         purchasable = gameObject.GetComponent<Purchasable>();
         meshCollider = gameObject.GetComponent<MeshCollider>();
+        sphereCollider = gameObject.GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
@@ -29,10 +31,12 @@ public class BoulderScript : MonoBehaviour
         if(GameManager.Instance.gold >= purchasable.price)
         {
             meshCollider.enabled = true;
+            sphereCollider.enabled = true;
         }
         else
         {
             meshCollider.enabled = false;
+            sphereCollider.enabled = false;
         }
 
         if (isThrown)

@@ -21,7 +21,9 @@ public class NavmeshNavigation : MonoBehaviour
 
     [Header("Gameplay")]
     [SerializeField] int gold = 100;
-
+    [SerializeField] float damage = 5;
+    [SerializeField] float fireRate = 1;
+    float ticker = 0;
     #endregion
 
     #region Private Varibles
@@ -106,7 +108,7 @@ public class NavmeshNavigation : MonoBehaviour
             }
             else
             {
-                Debug.Log(m_navPath.status);
+                //Debug.Log(m_navPath.status);
                 if(TryGetComponent(out Damagable d))
                 {
                     d.Annihilate();
@@ -135,5 +137,20 @@ public class NavmeshNavigation : MonoBehaviour
     public void AddGold()
     {
         GameManager.Instance.gold = gold;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "door")
+        {
+            if(other.TryGetComponent(out Damagable d))
+            {
+                ticker += Time.deltaTime;
+                if(ticker >= fireRate)
+                {
+                    d.ChangeHealth(-damage);
+                }
+            }
+        }
     }
 }
