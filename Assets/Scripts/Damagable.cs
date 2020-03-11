@@ -11,10 +11,20 @@ public class Damagable : MonoBehaviour
     private float maxHealth = 100.0f;
     [SerializeField] private GameObject damageEffect, healEffect;
     [SerializeField] private AudioSource damageAudio, healAudio;
+    [SerializeField] private bool annihilate = false;
 
     public bool IsDead { get { return this.health <= 0.0f; } }
 
     public UnityEvent deathEvent = new UnityEvent();
+
+    private void Update()
+    {
+        if(annihilate)
+        {
+            annihilate = false;
+            Annihilate();
+        }
+    }
 
     public void ChangeHealth(float amount, Vector3? location = null)
     {
