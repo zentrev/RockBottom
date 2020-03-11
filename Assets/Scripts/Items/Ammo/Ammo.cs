@@ -77,6 +77,7 @@ public class Ammo : Item<AmmoData>
             Collider[] colliders = parent.GetComponentsInChildren<Collider>();
             foreach(Collider col in colliders)
             {
+                Debug.Log(col.transform.name + "Disabled");
                 col.enabled = false;
             }
 
