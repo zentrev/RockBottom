@@ -13,6 +13,6 @@ public class Door : MonoBehaviour
 
     public void EndGame()
     {
-        
+        GameOverManager.Instance.TurnOnGameOver();
     }
 }
