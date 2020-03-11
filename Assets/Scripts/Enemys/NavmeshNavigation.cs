@@ -148,6 +148,7 @@ public class NavmeshNavigation : MonoBehaviour
                 ticker += Time.deltaTime;
                 if(ticker >= fireRate)
                 {
+                    ticker = 0;
                     d.ChangeHealth(-damage);
                 }
             }
