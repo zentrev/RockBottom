@@ -48,7 +48,6 @@ public class Ammo : Item<AmmoData>
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Ammo Collision");
         Damagable damagable = other.transform.GetComponentInParent<Damagable>();
 
         if (damagable && !damagable.IsDead)
@@ -63,8 +62,6 @@ public class Ammo : Item<AmmoData>
 
         Collider collider = this.GetComponent<Collider>();
 
-        Debug.Log("Collision " + collider.transform.name);
-
         Vector3 raycastOrigin = collider.bounds.center;
         Vector3 raycastDirection = (other.transform.position - raycastOrigin).normalized;
         Physics.Raycast(raycastOrigin, raycastDirection, out RaycastHit hit, 0.5f);
@@ -76,23 +73,22 @@ public class Ammo : Item<AmmoData>
             this.rb.velocity = Vector3.zero;
             this.rb.isKinematic = true;
 
-            //Set new parent, position, and rotation
-            parent.transform.SetParent(other.transform);
-            this.transform.LookAt(hit.point);
-            this.transform.position = hit.point;
-
+            //Turn off ammo collision
             Collider[] colliders = parent.GetComponentsInChildren<Collider>();
             foreach(Collider col in colliders)
             {
                 col.enabled = false;
             }
 
+            //Set new parent, position, and rotation
+            parent.transform.SetParent(other.transform);
+            this.transform.LookAt(hit.point);
+            this.transform.position = hit.point;
+
             if(hit.collider.TryGetComponent<Rigidbody>(out Rigidbody otherRB))
             {
                 otherRB.AddForceAtPosition(Vector3.back * 100, hit.point, ForceMode.Impulse);
             }
-
-            Debug.Log("Ammo Stuck");
         }
     }
 }
