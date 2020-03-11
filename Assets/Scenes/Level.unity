@@ -8156,101 +8156,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: a0512922163b0804fa168866c4de521b,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 93aa22978e123024789de62c83eaea8b, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1236309261
-Transform:
-  m_CorrespondingSourceObject: {fileID: 463124, guid: 570d99cf7660e2f4692da079a31af230,
-    type: 3}
-  m_PrefabInstance: {fileID: 1041852512}
-  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &754100435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11189,6 +11098,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 64670129817110852, guid: 570d99cf7660e2f4692da079a31af230, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 570d99cf7660e2f4692da079a31af230, type: 3}
+--- !u!4 &1041852513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 463124, guid: 570d99cf7660e2f4692da079a31af230,
+    type: 3}
+  m_PrefabInstance: {fileID: 1041852512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1045722749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15487,7 +15402,7 @@ Transform:
   - {fileID: 453557579}
   - {fileID: 2091100143}
   - {fileID: 385678088}
-  - {fileID: 748830494}
+  - {fileID: 1041852513}
   - {fileID: 71056552}
   - {fileID: 658659002}
   - {fileID: 1025594900}
@@ -18085,7 +18000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPersistant: 0
-  m_waves: 15
+  m_waves: 25
   m_enemys:
   - {fileID: 6679719056601594558, guid: 484437ac38f85524a9ab4c85fe795b3d, type: 3}
   - {fileID: 6679719056601594558, guid: a3ccea99e808afb449d7d7e4b1499837, type: 3}
@@ -18103,13 +18018,13 @@ MonoBehaviour:
   - {fileID: 565506708}
   - {fileID: 1523254727}
   m_minEnemys: 1
-  m_maxEnemys: 25
+  m_maxEnemys: 55
   m_enemyCount:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.10377359
+      time: 0.0041656494
+      value: 0.23060465
       inSlope: -0
       outSlope: -0
       tangentMode: 1
@@ -18117,8 +18032,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.5213388
     - serializedVersion: 3
-      time: 0.29135785
-      value: 0.18926735
+      time: 0.3580235
+      value: 0.50210303
       inSlope: 0.497893
       outSlope: -0.017683025
       tangentMode: 1
