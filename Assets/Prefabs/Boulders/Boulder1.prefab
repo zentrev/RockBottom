@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6199289563439549794}
   - component: {fileID: -4547374491695194623}
   - component: {fileID: 2986529093315872888}
+  - component: {fileID: -7446095240173581797}
   m_Layer: 9
   m_Name: Boulder1
   m_TagString: Untagged
@@ -317,4 +318,18 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: d437a9315f5ed24499ab7c6fa6ff8cf1, type: 2}
   rb: {fileID: 6199289563439549797}
   parent: {fileID: 0}
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1083484083751507187, guid: bda35fc8202f7da4f8abd268fdcfb926,
+    type: 3}
+--- !u!135 &-7446095240173581797
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199289562685789983}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9
+  m_Center: {x: 0, y: 0, z: 0}

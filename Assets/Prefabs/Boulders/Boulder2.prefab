@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6199289563439549794}
   - component: {fileID: 717465971250046140}
   - component: {fileID: 633180285149825928}
+  - component: {fileID: 8565085643592469701}
   m_Layer: 9
   m_Name: Boulder2
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 6199289562685789983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -318,3 +319,16 @@ MonoBehaviour:
   rb: {fileID: 6199289563439549797}
   parent: {fileID: 0}
   hitEffect: {fileID: 0}
+--- !u!135 &8565085643592469701
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199289562685789983}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9
+  m_Center: {x: 0, y: 0, z: 0}
