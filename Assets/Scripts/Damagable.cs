@@ -31,8 +31,6 @@ public class Damagable : MonoBehaviour
         //Change health
         this.health = Mathf.Clamp(this.health + amount, 0.0f, this.maxHealth);
 
-        Debug.Log($"Health Changed. Amount: {amount} | New Health: {this.health}");
-
         Vector3 spawnLocation = (location == null ? new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, this.transform.position.z) : location.Value);
 
         //If healed...
@@ -64,7 +62,6 @@ public class Damagable : MonoBehaviour
 
         if (this.IsDead)
         {
-            Debug.Log("Dead");
             deathEvent.Invoke();
             if(WaveManager.Instance != null) WaveManager.Instance.RemoveMe(this.gameObject);
         }
