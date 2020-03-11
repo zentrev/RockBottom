@@ -102,15 +102,15 @@ public class NavmeshNavigation : MonoBehaviour
             m_navCorner = 0;
             if (NavMesh.CalculatePath(transform.position, Target.position, NavMesh.AllAreas, m_navPath))
             {
-                Debug.Log("Worked");
+//                Debug.Log("Worked");
             }
             else
             {
-                Debug.Log("Failed");
+//                Debug.Log("Failed");
             }
             Debug.Log(m_navPath.status);
 
-            Debug.Log(m_navPath.corners.Length);
+//            Debug.Log(m_navPath.corners.Length);
 
 
             for (int i = 0; i < m_navPath.corners.Length - 1; i++)

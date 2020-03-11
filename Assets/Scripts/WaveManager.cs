@@ -36,7 +36,7 @@ public class WaveManager : Singleton<WaveManager>
         {
             GameObject enemyToSpawn = m_enemys[Random.Range(0, m_enemys.Length)];
             Transform spawnLocation = m_spawns[Random.Range(0, m_spawns.Length)];
-            GameObject spawnedEnemy = Instantiate(enemyToSpawn, spawnLocation.position, spawnLocation.rotation, m_dynamicRoot);
+            GameObject spawnedEnemy = Instantiate(enemyToSpawn, spawnLocation.position, Quaternion.identity, m_dynamicRoot);
             if(spawnedEnemy.TryGetComponent(out NavmeshNavigation nav))
             {
                 nav.Target = m_targets[Random.Range(0, m_targets.Length)];

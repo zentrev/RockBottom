@@ -127,6 +127,7 @@ MonoBehaviour:
   m_rotationAccleration: 0.1
   m_target: {fileID: 0}
   m_pathGenRate: 1
+  m_nodeTolorance: 2
   m_navCollider: {fileID: 1510966160151062760}
   m_holdingPin: {fileID: 0}
   gold: 100
@@ -154,7 +155,8 @@ AudioSource:
   m_GameObject: {fileID: 415799013820976339}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243366450046692526, guid: ec12f7772c03e4c4c9e4c2f1643595ad,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 406baef2ed691d24087401bc4195a678, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
