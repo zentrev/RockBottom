@@ -56,11 +56,6 @@ public class Ammo : Item<AmmoData>
 
             if (this.hitEffect != null)
             {
-                if(this.hitEffect.name == "MolotovBurst 1")
-                {
-                print(this.hitEffect.transform.rotation);
-                    GameObject.Instantiate(this.hitEffect, this.hitEffect.transform.position, Quaternion.identity);
-                }
                 GameObject.Instantiate(this.hitEffect, this.transform.position, Quaternion.identity);
             }
         }
