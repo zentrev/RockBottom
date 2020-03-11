@@ -106,7 +106,7 @@ public class NavmeshNavigation : MonoBehaviour
             }
             else
             {
-                Debug.Log(m_navPath.status);
+                //Debug.Log(m_navPath.status);
                 if(TryGetComponent(out Damagable d))
                 {
                     d.Annihilate();
