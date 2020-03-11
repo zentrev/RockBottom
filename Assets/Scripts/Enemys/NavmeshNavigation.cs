@@ -54,7 +54,7 @@ public class NavmeshNavigation : MonoBehaviour
         m_direction = transform.forward;
         if (m_navPath != null)
         {
-            if (m_navPath.status != NavMeshPathStatus.PathComplete)
+            if (m_navPath.status == NavMeshPathStatus.PathInvalid)
             {
                 m_direction = Vector3.zero;
             }
