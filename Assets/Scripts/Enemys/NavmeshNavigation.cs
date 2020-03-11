@@ -136,7 +136,7 @@ public class NavmeshNavigation : MonoBehaviour
 
     public void AddGold()
     {
-        GameManager.Instance.gold = gold;
+        GameManager.Instance.gold += gold;
     }
 
     private void OnTriggerStay(Collider other)
@@ -148,6 +148,7 @@ public class NavmeshNavigation : MonoBehaviour
                 ticker += Time.deltaTime;
                 if(ticker >= fireRate)
                 {
+                    ticker = 0;
                     d.ChangeHealth(-damage);
                 }
             }
